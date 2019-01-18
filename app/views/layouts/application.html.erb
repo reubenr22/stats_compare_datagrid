@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StatsCompareDatagrid</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="main-navigation">
+      <div class="navbar-header animated fadeInUp">
+            <a class="navbar-brand" href="#">Fortnite Stats Compare</a>
+      </div>
+      <ul class="nav-list">
+          <li class="nav-list-item">
+              <a href="#" class="nav-link">Stats</a>
+          </li>
+          <li class="nav-list-item">
+              <a href="#" class="nav-link">Friends</a>
+          </li>
+          <li class="nav-list-item">
+              <a href="#" class="nav-link">FAQ</a>
+          </li>
+          <li class="nav-list-item">
+              <a href="#" class="nav-link">Account</a>
+          </li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
