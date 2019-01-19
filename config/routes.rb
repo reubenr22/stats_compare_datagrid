@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   resources :stats
 
-  get 'new' => 'alter#new'
-  post 'new' => 'alter#new'
+  get 'new' => 'stats#new'
+  post 'new' => 'stats#new'
 
-  get 'edit' => 'alter#edit'
-  post 'edit' => 'alter#edit'
+  get 'edit' => 'stats#edit'
+  post 'edit' => 'stats#edit'
 
-  get 'show' => 'alter#show'
+  get 'show' => 'stats#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'stats#index'

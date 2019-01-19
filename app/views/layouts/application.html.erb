@@ -25,10 +25,34 @@
               <a href="#" class="nav-link">FAQ</a>
           </li>
           <li class="nav-list-item">
-              <a href="#" class="nav-link">Account</a>
+              <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                  <% if user_signed_in? %>
+                    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-link" %>
+                  <% end %>
+              </div>
+              <div class="">
+                    <% if user_signed_in? %>
+                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-link" %>
+                    <% end %>
+              </div>
           </li>
       </ul>
     </nav>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
