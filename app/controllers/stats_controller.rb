@@ -24,7 +24,7 @@ class StatsController < ApplicationController
 
     respond_to do |format|
       if @stat.save
-        format.html { redirect_to @stat, notice: 'stat was successfully created.' }
+        format.html { redirect_to @stat, notice: 'Account was successfully added.' }
         format.json { render :show, status: :created, location: @stat }
       else
         format.html { render :new }
@@ -38,7 +38,7 @@ class StatsController < ApplicationController
   def update
     respond_to do |format|
       if @stat.update(stat_params)
-        format.html { redirect_to @stat, notice: 'Stat was successfully updated.' }
+        format.html { redirect_to @stat, notice: 'Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @stat }
       else
         format.html { render :edit }
@@ -52,7 +52,7 @@ class StatsController < ApplicationController
   def destroy
     @stat.destroy
     respond_to do |format|
-      format.html { redirect_to stats_url, notice: 'Stat was successfully destroyed.' }
+      format.html { redirect_to stats_url, notice: 'Account was successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class StatsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def stat_params
-	  params.require(:epic_name).permit(:lifetime_wins, :lifetime_win_percentage, :lifetime_kills, :lifetime_kills_per_death, :lifetime_score, :lifetime_score_per_match)
+	  params.require(:stat).permit(:epic_name, :lifetime_wins, :lifetime_win_percentage, :lifetime_kills, :lifetime_kills_per_death, :lifetime_score, :lifetime_score_per_match)
 	end
 
 end
