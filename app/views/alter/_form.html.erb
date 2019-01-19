@@ -1,0 +1,36 @@
+<%= form_with(model: @stat, local: true) do |form| %>
+  <% if @stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stat.errors.count, "error") %> prohibited this stat from being saved:</h2>
+
+      <ul>
+      <% stat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form_group">
+    <%= form.label :epic_name %>
+    <%= form.text_field :epic_name %>
+  </div>
+    <div class="form_group">
+    <%= form.label :epic_id_integer %>
+    <%= form.text_field :epic_id_integer %>
+  </div>
+
+  <div class="form_group">
+    <%= form.label :lifetime_kills %>
+    <%= form.number_field :lifetime_kills %>
+  </div>
+
+  <div class="form_group">
+    <%= form.label :lifetime_kills_per_death %>
+    <%= form.text_field :lifetime_kills_per_death %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

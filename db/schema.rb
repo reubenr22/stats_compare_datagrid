@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_01_18_224614) do
     t.integer "lifetime_wins"
     t.float "lifetime_win_percentage"
     t.integer "lifetime_score"
-    t.float "lifetime_score_per_minute"
+    t.float "lifetime_score_per_match"
     t.integer "lifetime_kills"
     t.decimal "lifetime_kills_per_death"
     t.datetime "created_at", null: false

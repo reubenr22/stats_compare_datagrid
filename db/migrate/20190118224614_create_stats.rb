@@ -6,7 +6,7 @@ class CreateStats < ActiveRecord::Migration[5.2]
       t.integer :lifetime_wins
       t.float :lifetime_win_percentage
       t.integer :lifetime_score
-      t.float :lifetime_score_per_minute
+      t.float :lifetime_score_per_match
       t.integer :lifetime_kills
       t.decimal :lifetime_kills_per_death
 
